@@ -1,54 +1,64 @@
-import React, { Suspense, useState, useEffect } from 'react';
+import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, useGLTF } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 
-const Model = () => {
-  // Try multiple possible paths for your GLTF file
-  const modelPath = '/src/assets/desktop/scene.gltf'; // Based on your folder structure
-  
-  try {
-    const { scene } = useGLTF(modelPath);
-    return <primitive object={scene} scale={1.5} position={[0, -1, 0]} />;
-  } catch (error) {
-    console.error('Error loading GLTF:', error);
-    // Return a fallback 3D object
-    return (
-      <mesh>
-        <boxGeometry args={[2, 1, 1]} />
+// Create a simple 3D desktop model instead of loading external file
+const DesktopModel3D = () => {
+  return (
+    <group>
+      {/* Monitor */}
+      <mesh position={[0, 0.5, 0]}>
+        <boxGeometry args={[2, 1.2, 0.1]} />
+        <meshStandardMaterial color="#2D3748" />
+      </mesh>
+      
+      {/* Screen */}
+      <mesh position={[0, 0.5, 0.06]}>
+        <boxGeometry args={[1.8, 1, 0.01]} />
+        <meshStandardMaterial color="#1A202C" />
+      </mesh>
+      
+      {/* Base */}
+      <mesh position={[0, -0.1, 0]}>
+        <cylinderGeometry args={[0.3, 0.4, 0.2]} />
         <meshStandardMaterial color="#4A5568" />
       </mesh>
-    );
-  }
+      
+      {/* Keyboard */}
+      <mesh position={[0, -0.7, 0.8]}>
+        <boxGeometry args={[1.5, 0.1, 0.5]} />
+        <meshStandardMaterial color="#E2E8F0" />
+      </mesh>
+      
+      {/* Mouse */}
+      <mesh position={[1.2, -0.65, 0.6]}>
+        <boxGeometry args={[0.2, 0.05, 0.3]} />
+        <meshStandardMaterial color="#CBD5E0" />
+      </mesh>
+    </group>
+  );
 };
 
 const DesktopModel: React.FC = () => {
-  const [error, setError] = useState<string | null>(null);
-
   return (
     <div className="w-full h-[400px] md:h-[500px] lg:h-[600px]">
-      {error && (
-        <div className="text-red-500 p-4 bg-red-50 rounded mb-4">
-          Error loading 3D model: {error}
-        </div>
-      )}
-      <Canvas 
-        camera={{ position: [0, 1.5, 4] }}
-        onError={(error) => {
-          console.error('Canvas error:', error);
-          setError(error.message);
-        }}
-      >
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[0, 5, 5]} intensity={1} />
-        <Suspense fallback={
-          <mesh>
-            <boxGeometry args={[1, 1, 1]} />
-            <meshStandardMaterial color="orange" />
-          </mesh>
-        }>
-          <Model />
+      <Canvas camera={{ position: [3, 2, 4], fov: 50 }}>
+        <ambientLight intensity={0.4} />
+        <directionalLight position={[5, 5, 5]} intensity={0.8} />
+        <pointLight position={[-5, 5, 5]} intensity={0.3} />
+        
+        <Suspense fallback={null}>
+          <DesktopModel3D />
         </Suspense>
-        <OrbitControls enableZoom={false} autoRotate />
+        
+        <OrbitControls 
+          enableZoom={true} 
+          autoRotate 
+          autoRotateSpeed={2}
+          maxPolarAngle={Math.PI / 2}
+          minDistance={2}
+          maxDistance={8}
+        />
       </Canvas>
     </div>
   );
