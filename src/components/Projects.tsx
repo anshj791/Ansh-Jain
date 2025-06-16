@@ -40,8 +40,25 @@ const Projects = () => {
       features: ["Real-time Chat", "Stories", "Advanced Filters", "Feed Algorithm"],
       stats: { commits: "150+", lines: "15K+", features: "25+" }
     },
-    {
+        {
       id: 3,
+      title: "Linkly ",
+      subtitle: "URL Shortener",
+      description: "A modern URL shortening service built with a focus on speed, reliability, and user experience. Features custom aliases, analytics, and API access.",
+      longDescription: "",
+      image: "/api/placeholder/600/400",
+      tech: ["React", "Node.js", "MongoDB", "REST API","Express.js"],
+      category: "web",
+      status: "Live",
+      github: "https://github.com/anshj791/Linkly",
+      liveDemo: "https://linkl.netlify.app/",
+      icon: <Brain className="w-8 h-8" />,
+      gradient: "from-cyan-500 via-blue-500 to-purple-600",
+      features: ["Custom Aliases", "Analytics Dashboard", "API Access", "QR Code Generation"],
+      stats: { Clicks: "1.2K+", rating: 4.5, users: "10K+" }
+    },
+    {
+      id: 4,
       title: "Pinterest Clone",
       subtitle: "Visual Discovery Platform",
       description: "A Pinterest-inspired platform focused on visual content discovery and organization. Features advanced search, board management, and responsive masonry layouts.",
@@ -58,7 +75,7 @@ const Projects = () => {
       stats: { pins: "10K+", boards: "500+", searches: "2K+" }
     },
     {
-      id: 4,
+      id: 5,
       title: "Smart Trolley System",
       subtitle: "IoT Retail Solution",
       description: "An innovative IoT-based smart shopping system that revolutionizes retail experience through automated billing, product recommendations, and inventory management.",
@@ -75,7 +92,7 @@ const Projects = () => {
       stats: { accuracy: "98%", speed: "3x Faster", efficiency: "85%" }
     },
     {
-      id: 5,
+      id: 6,
       title: "CrucibleOne",
       subtitle: "E-Commerce Platform",
       description: "A complete e-commerce solution developed during internship at Coder Edge Technology. Features comprehensive product management, secure payments, and admin dashboard.",
@@ -90,6 +107,23 @@ const Projects = () => {
       gradient: "from-purple-500 via-indigo-500 to-blue-600",
       features: ["Payment Integration", "Admin Dashboard", "Order Management", "Product Catalog"],
       stats: { products: "500+", orders: "100+", uptime: "99.9%" }
+    },
+        {
+      id: 5,
+      title: "Tweety AI",
+      subtitle: "AI-Powered Tweet Generator",
+      description: "An AI-powered tool that generates creative and engaging tweets based on user input. Features include sentiment analysis, hashtag suggestions, and customizable tone.",
+      longDescription: "Tweety AI is a web application that utilizes natural language processing and machine learning models to generate unique and engaging tweets based on user-provided keywords or topics. It offers features like sentiment analysis, hashtag suggestions, and the ability to customize the tone and style of the generated tweets.",
+      image: "/api/placeholder/600/400",
+      tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Stripe", "JWT", "OpenAI API"],
+      category: "Web",
+      status: "Live",
+      github: "https://github.com/anshj791/smart-trolley-system",
+      liveDemo: "#",
+      icon: <ShoppingCart className="w-8 h-8" />,
+      gradient: "from-green-500 via-teal-500 to-blue-600",
+      features: ["Sentiment Analysis", "Hashtag Suggestions", "Customizable Tone", "AI-Powered Generation"],
+      stats: { generated: "500+", accuracy: "95%", speed: "Fast" }
     }
   ];
 
@@ -226,11 +260,15 @@ const Projects = () => {
             {project.liveDemo !== '#' && (
               <a
                 href={project.liveDemo}
+               
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center px-4 py-2 rounded-lg border border-white/20 text-white hover:bg-white/10 font-medium text-sm transition-all duration-300"
+                className="flex-1 flex items-center cursor-pointer justify-center px-4 py-2 rounded-lg border border-white/20 text-white hover:bg-white/10 font-medium text-sm transition-all duration-300"
               >
-                <ExternalLink className="w-4 h-4 mr-2" />
+                <ExternalLink  onClick={(e) => {
+                  e.preventDefault();
+                  window.open(project.liveDemo, '_blank');
+                }} className="w-4 h-4 mr-2" />
                 Demo
               </a>
             )}

@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Spotlight } from './ui/spotlight';
 import { TextGenerateEffect } from './ui/text-generate-effect';
@@ -39,7 +38,7 @@ const Hero = () => {
               </span>
             </motion.h1>
 
-            {/* ⌨️ Typing effect here */}
+            
             <motion.div
               className="text-xl md:text-2xl text-neutral-300 max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 10 }}
@@ -49,6 +48,7 @@ const Hero = () => {
             </motion.div>
 
             <TextGenerateEffect words={words} className="max-w-4xl mx-auto" />
+
 
             {/* 👇 3D Model */}
             <div className="mt-2">
@@ -91,19 +91,19 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 1.0 }}
             >
               <a
-                href="https://github.com"
+                href="https://github.com/anshj791"
                 className="text-neutral-400 hover:text-cyan-400 transform hover:scale-110 transition-all duration-200"
               >
                 <Github size={24} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/ansh-jain-6b783822b/"
                 className="text-neutral-400 hover:text-cyan-400 transform hover:scale-110 transition-all duration-200"
               >
                 <Linkedin size={24} />
               </a>
               <a
-                href="mailto:john@example.com"
+                href="mailto:anshj791@gmail.com"
                 className="text-neutral-400 hover:text-cyan-400 transform hover:scale-110 transition-all duration-200"
               >
                 <Mail size={24} />
