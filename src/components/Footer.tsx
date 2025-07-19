@@ -28,7 +28,7 @@ const Footer = () => {
             >
               <Heart className="w-4 h-4 text-red-500 fill-current" />
             </motion.div>
-            <span>by John Doe</span>
+            <span>by Ansh Jain</span>
           </div>
           <div className="mt-6 pt-6 border-t border-neutral-800">
             <p className="text-neutral-500 text-sm">
