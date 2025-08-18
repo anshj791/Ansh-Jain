@@ -4,11 +4,28 @@ import { Calendar, MapPin, Briefcase, Code, Zap, Users, Rocket } from 'lucide-re
 
 const Experience = () => {
   const experiences = [
+        {
+      title: 'Software Developer',
+      company: 'Agile infoways',
+      location: 'Ahmedabad, India',
+      period: 'July 1st 2025 - Present',
+      type: 'Training',
+      description: 'Currently undergoing intensive training in software development with a focus on React.js, Node.js, and full-stack development practices. Engaging in hands-on projects to enhance coding skills and understanding of modern web technologies.',
+      achievements: [
+        'Completed advanced training in React.js and Node.js(Nest.js)',
+        'Developed multiple full-stack applications',
+        'Gained expertise in RESTful API development',
+        'Participated in code reviews and Agile ceremonies',
+        'Enhanced problem-solving skills through real-world projects'
+      ],
+      color: 'from-blue-400 to-indigo-500',
+      icon: Code
+    },
     {
       title: 'React.js Developer Intern',
       company: 'Coder Edge Technology',
       location: 'India',
-      period: 'Jan 15, 2025 - Present',
+      period: 'Jan 15, 2025 - June 15, 2025',
       type: 'internship',
       description: 'Developing and maintaining dynamic web components using React.js for client-facing applications. Working in an Agile environment with focus on performance optimization and best practices.',
       achievements: [
