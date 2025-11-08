@@ -1,10 +1,12 @@
+import React, { Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { Spotlight } from './ui/spotlight';
 import { TextGenerateEffect } from './ui/text-generate-effect';
 import { BackgroundBeams } from './ui/background-beams';
 import { Github, Linkedin, Mail, Download } from 'lucide-react';
-import DesktopModel from './canvas/Desktop';
 import StarsCanvas from './canvas/StarCanvas'; // ⭐ New import
+
+const DesktopModel = React.lazy(() => import('./canvas/Desktop'));
 
 const Hero = () => {
   const words = "Building the future with code, creativity, and cutting-edge technology.";
@@ -51,8 +53,10 @@ const Hero = () => {
 
 
             {/* 👇 3D Model */}
-            <div className="mt-2">
-              <DesktopModel />
+            <div className="mt-2 h-64 md:h-80 flex items-center justify-center">
+              <Suspense fallback={<div className="text-neutral-400">Something is loading...</div>}>
+                <DesktopModel />
+              </Suspense>
             </div>
 
             {/* 👇 Call-to-action buttons */}

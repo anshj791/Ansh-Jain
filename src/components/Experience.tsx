@@ -1,27 +1,27 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Briefcase, Code, Zap, Users, Rocket } from 'lucide-react';
+import { Calendar, MapPin, Briefcase, Code, Users, Rocket } from 'lucide-react';
 
 const Experience = () => {
   const experiences = [
-        {
+            {
       title: 'Software Developer',
       company: 'Agile infoways',
       location: 'Ahmedabad, India',
-      period: 'July 1st 2025 - Present',
-      type: 'Training',
-      description: 'Currently undergoing intensive training in software development with a focus on React.js, Node.js, and full-stack development practices. Engaging in hands-on projects to enhance coding skills and understanding of modern web technologies.',
+      period: 'July 1 2025 - Present',
+      type: 'Trainee',
+      description: 'Developing and maintaining dynamic web components using React.js and Nest.js for client-facing applications. Working in an Agile environment with focus on performance optimization and best practices.',
       achievements: [
-        'Completed advanced training in React.js and Node.js(Nest.js)',
-        'Developed multiple full-stack applications',
-        'Gained expertise in RESTful API development',
-        'Participated in code reviews and Agile ceremonies',
-        'Enhanced problem-solving skills through real-world projects'
+        'Developed dynamic web components using React.js',
+        'Integrated RESTful APIs and optimized data flow',
+        'Enhanced application performance with state management',
+        'Contributed to code reviews and Git workflows',
+        'Participated in Agile stand-ups and sprint planning'
       ],
-      color: 'from-blue-400 to-indigo-500',
+      color: 'from-purple-400 to-pink-500',
       icon: Code
     },
-    {
+        {
       title: 'React.js Developer Intern',
       company: 'Coder Edge Technology',
       location: 'India',
