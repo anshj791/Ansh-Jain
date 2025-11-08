@@ -28,7 +28,9 @@ const TechStack = () => {
       technologies: [
         { name: "Node.js", level: 85, experience: "2+ years", color: "from-green-400 to-emerald-500" },
         { name: "Express.js", level: 80, experience: "2+ years", color: "from-gray-500 to-gray-700" },
-        { name: "Python", level: 75, experience: "1+ year", color: "from-yellow-400 to-orange-500" }
+        { name: "Python", level: 75, experience: "1+ year", color: "from-yellow-400 to-orange-500" },
+        { name: "Java", level: 70, experience: "1+ year", color: "from-red-400 to-red-600" },
+        { name: "Spring boot", level: 70, experience: "6+ months", color: "from-blue-400 to-indigo-500" }
       ],
       className: "md:col-span-1",
       bgGradient: "from-green-900/20 via-emerald-900/20 to-teal-900/20",
